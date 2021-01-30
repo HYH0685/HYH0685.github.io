@@ -1,18 +1,12 @@
 var myDate = new Date();
-var myMonth = myDate.getMonth() + 1;
-if (myMonth < 10) {
-  getMonth = "0" + String(myMonth);
-} else {
-  getMonth = String(myMonth);
-}
-var getDate = String(myDate.getDate());
-if (getDate < 10) {
-  getDate = "0" + String(getDate);
-} else {
-  getDate = String(getDate);
-}
-var getMonthDate = "S" + getMonth + getDate;
 
+var myMonth = myDate.getMonth() + 1;
+getMonth = myMonth < 10 ? ("0" + String(myMonth)) : String(myMonth);
+
+var getDate = String(myDate.getDate());
+getDate = getDate < 10 ? ("0" + String(getDate)) : String(getDate);
+
+var getMonthDate = "S" + getMonth + getDate;
 var geturl = "https://cdn.jsdelivr.net/gh/empty-hyh/cdn/hexo/history/" + getMonth + ".json";
 
 btf.isJqueryLoad(() => {
@@ -39,5 +33,5 @@ btf.isJqueryLoad(() => {
         $("#history-card").append(str);
       }
     });
-  })
+  });
 });
