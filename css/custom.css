@@ -59,7 +59,7 @@ hr:before {
 
 #web_bg {
   /* 背景图像的地址（url括号里） */
-	background-image: url('/images/user/background.png');
+	background-image: url('https://cdn.jsdelivr.net/gh/Eurkon/CDN/hexo/images/user/background.png');
 	background-repeat: no-repeat;
   /* 背景图像不重复 */
 	background-repeat: no-repeat;
