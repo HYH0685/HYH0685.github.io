@@ -285,7 +285,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"https://eurkon.gitee.io/"});
+toolbox.router.get("/*", toolbox.cacheFirst, {"origin":"https://blog.eurkon.com/"});
 toolbox.router.get("/*", toolbox.cacheFirst, {"origin":["https://cdn.jsdelivr.net/npm/","https://cdn.jsdelivr.net/gh/Eurkon/CDN/hexo/"]});
 
 
