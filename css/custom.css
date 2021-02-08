@@ -6,6 +6,10 @@ a, img, svg, canvas {
 	cursor: url(/images/user/pointer.cur), auto !important;
 }
 
+.search-dialog {
+	border-radius: 8px;
+}
+
 /* 文章 */
 .reward-button, #pagination .page-number:hover {
 	cursor: url(/images/user/pointer.cur), auto !important;
