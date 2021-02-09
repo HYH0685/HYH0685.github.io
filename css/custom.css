@@ -57,10 +57,6 @@ a, img, svg, canvas {
   color: var(--btn-color) !important;
 }
 
-hr:before {
-	content: '\f197'
-}
-
 #web_bg {
   /* 背景图像的地址（url括号里） */
 	background-image: url('/images/user/background_tiny.png');
