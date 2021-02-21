@@ -3388,26 +3388,14 @@ li.categoryBar-list-item:nth-child(2) {
 li.categoryBar-list-item:nth-child(3) {
   background: url('/images/letter/c.png');
 }
-li.categoryBar-list-item:nth-child(4) {
-  background: url('/images/letter/d.png');
-}
-li.categoryBar-list-item:nth-child(5) {
-  background: url('/images/letter/e.png');
-}
 li.categoryBar-list-item:nth-child(1)>span::after {
-  content: 'Hexo' !important;
+  content: '💬生活随记' !important;
 }
 li.categoryBar-list-item:nth-child(2)>span::after {
-  content: 'Markdown' !important;
+  content: '📖教程笔记' !important;
 }
 li.categoryBar-list-item:nth-child(3)>span::after {
-  content: 'R 语言教程' !important;
-}
-li.categoryBar-list-item:nth-child(4)>span::after {
-  content: '大数据教程' !important;
-}
-li.categoryBar-list-item:nth-child(5)>span::after {
-  content: '数据库' !important;
+  content: '🖥️作品案例' !important;
 }
 li.categoryBar-list-item {
   width: 32.3% !important;
