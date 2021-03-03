@@ -1,34 +1,52 @@
 body {
-	cursor: url(/images/user/default.cur), auto !important;
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/default.cur), auto !important;
 }
 
-a, img, svg, canvas {
-	cursor: url(/images/user/pointer.cur), auto !important;
+a, img, button, svg, canvas {
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
-.search-dialog {
-	border-radius: 8px;
+/* 打赏按钮 */
+.reward-button {
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
-/* 文章 */
-.reward-button, #pagination .page-number:hover {
-	cursor: url(/images/user/pointer.cur), auto !important;
+/* 文章翻页 */
+#pagination .page-number:hover {
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
 /* 图片预览 */
 .fancybox, .fancybox-button, .fancybox-content {
-	cursor: url(/images/user/pointer.cur), auto !important;
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
 /* 评论与回复 */
 .switch-btn, .vcol * , .v[data-class=v] .vicon, .v[data-class=v] .vbtn, .vat, .vemojis *, .vcontent.expand {
-	cursor: url(/images/user/pointer.cur), auto !important;
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
+/* 网站收藏卡片 */
 .card-star {
-	cursor: url(/images/user/pointer.cur), auto !important;
+	cursor: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN@latest/hexo/images/user/pointer.cur), auto !important;
 }
 
+/* 表格边框 */
+table th, table td {
+	border: 1px solid var(--font-color);
+}
+
+/* 表格横向滚动条 */
+.table-wrap {
+	overflow-x: auto;
+}
+
+/* 搜索框 */
+.search-dialog {
+	border-radius: 8px;
+}
+
+/* 评论输入框 */
 .v[data-class=v] .vwrap .vheader .vinput {
 	font-size: 0.9em;
 }
@@ -47,24 +65,21 @@ a, img, svg, canvas {
 	transition: all 0.3s;
 }
 
+/* Twikoo评论框高度 */
+.el-textarea__inner {
+	min-height: 150px !important;
+	height: 150px !important;
+}
+
+/* 豆瓣页面按钮 */
 .hexo-douban-active {
-	background: var(--btn-bg) !important;
 	color: var(--btn-color) !important;
+	background: var(--btn-bg) !important;
 }
 
 .hexo-douban-button:hover {
-	background: var(--btn-bg) !important;
 	color: var(--btn-color) !important;
-}
-
-#web_bg {
-  /* 背景图像的地址（url括号里） */
-	background-image: url('/images/user/background_tiny.png');
-	background-repeat: no-repeat;
-  /* 背景图像不重复 */
-	background-repeat: no-repeat;
-  /* 背景图像大小 */
-	background-size: cover;
+	background: var(--btn-bg) !important;
 }
 
 /* 旋转标题 before */
@@ -76,29 +91,9 @@ a, img, svg, canvas {
 	animation: avatar_turn_around 2s linear infinite;
 }
 
-/* 分页器的三个点(...) */
-.space {
-	color: var(--btn-bg)
-}
-
-#vcomment textarea {
-	/* background: url(/images/user/textarea.png) 100% 100% no-repeat */
-}
-
+/* 评论按钮 */
 .v[data-class=v] .vcards .vcard .vh .vmeta .vat {
 	color: var(--btn-bg) !important;
-}
-
-.hide-block>a.hide-button.open,.hide-inline>a.hide-button.open {
-	display: inline-block;
-}
-
-.layout_post img {
-	display: inline-block;
-}
-
-.imgList li::before {
-	content: none !important;
 }
 
 /* 滚动条 */
@@ -122,9 +117,41 @@ a, img, svg, canvas {
 	background-color: transparent;
 }
 
-::-moz-selection {
-	background-color: var(--btn-bg);
-	color: #fff;
+/* 首页头图透明 */
+#page-header.full_page {
+	background: transparent !important;
+}
+
+[data-theme="dark"] #page-header.full_page:before {
+	background: transparent !important;
+}
+
+/* page页头图透明 */
+#page-header.not-home-page {
+	background: transparent !important;
+}
+
+[data-theme="dark"] #page-header.not-home-page:before {
+	background: transparent !important;
+}
+
+/* 文章top-img透明 */
+#page-header.post-bg {
+	background: transparent !important;
+}
+
+[data-theme="dark"] #page-header.post-bg {
+	background: transparent !important;
+}
+
+/* 文章top-img黑色透明玻璃效果移除 */
+#page-header.post-bg:before {
+	/* background-color: transparent !important; */
+}
+
+/*夜间模式文章top-img伪类遮罩层透明*/
+[data-theme="dark"] #page-header.post-bg:before {
+	/* background: transparent !important; */
 }
 
 /* 页脚透明 */
@@ -132,30 +159,20 @@ a, img, svg, canvas {
 	background: transparent !important;
 }
 
-/* 页头图片透明 */
-#page-header {
-	background: 0 0 !important;
+[data-theme="dark"] #footer::before {
+	background: transparent !important;
 }
 
+/* 页脚padding */
 #footer #footer-wrap {
-	color: #ffffff !important;
 	padding: 0.5rem 1rem;
 }
 
-/* 所有背景（包括首页卡片、文章页、页面页等） */
-#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post, .cover, .gallery-group-img {
-	/* background-color: var(--card-bg); */
+/* 卡片背景 */
+div#post, div#page, div#archive, div#tag, div#category, div.card-widget, #recent-posts > .recent-post-item {
+	background: rgba(255,255,255,.9) !important;
 }
 
-[data-theme=dark] #nav,[data-theme=dark] .layout_page>div:first-child:not(.recent-posts),[data-theme=dark] .layout_post>#post {
-	/* background-color: var(--card-bg); */
-}
-
-
-table th, table td {
-	border: 1px solid var(--font-color);
-}
-
-.table-wrap {
-	overflow-x: auto;
+[data-theme=dark] div#post, [data-theme=dark] div#page, [data-theme=dark] div#archive, [data-theme=dark] div#tag, [data-theme=dark] div#category, [data-theme=dark] div.card-widget, [data-theme=dark] #recent-posts > .recent-post-item {
+	background: rgba(0,0,0,.9) !important;
 }
