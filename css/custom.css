@@ -46,6 +46,17 @@ table th, table td {
 	border-radius: 8px;
 }
 
+/* 右下角按钮 */
+#rightside > div > button, #rightside > div > a {
+	margin-bottom: 2px;
+	border-radius: 15px;
+}
+
+/* valine 评论表情悬停放大 */
+img.vemoji:hover{
+	transform: scale(2);
+}
+
 /* 评论输入框 */
 .v[data-class=v] .vwrap .vheader .vinput {
 	font-size: 0.9em;
