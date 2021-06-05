@@ -1297,8 +1297,13 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 15px;
-  --global-bg: #fff;
+  --main: #49b1f5;
+  --second: #fff;
+  --cover-bg: #000;
+  --cover-text: #eee;
+  --main-shadow: 0 8px 12px -3px rgba(73,177,245,0.2);
+  --global-font-size: 16px;
+  --global-bg: #edf0f7;
   --font-color: #4c4948;
   --hr-border: #a4d8fa;
   --hr-before-color: #80c8f8;
@@ -1354,19 +1359,6 @@ body {
 }
 input::placeholder {
   color: var(--font-color);
-}
-#web_bg {
-  position: fixed;
-  z-index: -999;
-  width: 100%;
-  height: 100%;
-  background: url(https://cdn.jsdelivr.net/gh/Eurkon/CDN/hexo/images/user/background.png);
-  background-attachment: local;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 h1,
 h2,
@@ -1553,135 +1545,104 @@ img:not([src]) {
   --hlscrollbar-bg: #121212;
   --hlexpand-bg: linear-gradient(180deg, rgba(33,33,33,0.6), rgba(33,33,33,0.9));
 }
-#article-container pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 3.8em;
-  counter-reset: linenumber;
-  line-height: 1.6;
-}
-#article-container pre[class*='language-'].line-numbers > code {
-  position: relative;
-  line-height: 1.6;
-  white-space: inherit;
-  word-wrap: normal;
-  word-break: normal;
-  overflow-wrap: normal;
-}
-#article-container pre[class*='language-'].line-numbers .line-numbers-rows {
-  position: absolute;
-  top: 0;
-  left: -3.8em;
-  width: 3em;
-  letter-spacing: -1px;
-  font-size: 100%;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-#article-container pre[class*='language-'].line-numbers .line-numbers-rows > span {
-  display: block;
-  counter-increment: linenumber;
-  pointer-events: none;
-}
-#article-container pre[class*='language-'].line-numbers .line-numbers-rows > span:before {
-  display: block;
-  padding-right: 0.8em;
-  color: var(--hlnumber-color);
-  content: counter(linenumber);
-  text-align: right;
-}
-pre[class*='language-'] .token.comment,
-pre[class*='language-'] .token.prolog,
-pre[class*='language-'] .token.doctype,
-pre[class*='language-'] .token.cdata {
-  color: #7c7c7c;
-}
-pre[class*='language-'] .token.punctuation {
-  color: #c5c8c6;
-}
-pre[class*='language-'] .namespace {
-  opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-  filter: alpha(opacity=70);
-}
-pre[class*='language-'] .token.property,
-pre[class*='language-'] .token.keyword,
-pre[class*='language-'] .token.tag {
-  color: #96cbfe;
-}
-pre[class*='language-'] .token.class-name {
-  color: #ffffb6;
-}
-pre[class*='language-'] .token.boolean,
-pre[class*='language-'] .token.constant {
-  color: #9c9;
-}
-pre[class*='language-'] .token.symbol,
-pre[class*='language-'] .token.deleted {
-  color: #f92672;
-}
-pre[class*='language-'] .token.number {
-  color: #ff73fd;
-}
-pre[class*='language-'] .token.selector,
-pre[class*='language-'] .token.attr-name,
-pre[class*='language-'] .token.string,
-pre[class*='language-'] .token.char,
-pre[class*='language-'] .token.builtin,
-pre[class*='language-'] .token.inserted {
-  color: #a8ff60;
-}
-pre[class*='language-'] .token.variable {
-  color: #c6c5fe;
-}
-pre[class*='language-'] .token.operator {
-  color: #ededed;
-}
-pre[class*='language-'] .token.entity {
-  color: #ffffb6;
-  cursor: help;
-}
-pre[class*='language-'] .token.url {
-  color: #96cbfe;
-}
-pre[class*='language-'] .language-css .token.string,
-pre[class*='language-'] .style .token.string {
-  color: #87c38a;
-}
-pre[class*='language-'] .token.atrule,
-pre[class*='language-'] .token.attr-value {
-  color: #f9ee98;
-}
-pre[class*='language-'] .token.function {
-  color: #dad085;
-}
-pre[class*='language-'] .token.regex {
-  color: #e9c062;
-}
-pre[class*='language-'] .token.important {
-  color: #fd971f;
-}
-pre[class*='language-'] .token.important,
-pre[class*='language-'] .token.bold {
-  font-weight: bold;
-}
-pre[class*='language-'] .token.italic {
-  font-style: italic;
-}
-#article-container pre[class*='language-']::-webkit-scrollbar-thumb {
+figure.highlight table::-webkit-scrollbar-thumb {
   background: var(--hlscrollbar-bg);
 }
-#article-container pre[class*='language-']:not(.line-numbers) {
-  padding: 10px 20px;
+figure.highlight pre .deletion {
+  color: #bf42bf;
 }
-#article-container pre[class*='language-'] .caption {
-  margin-left: -3.8em;
-  padding: 0.2rem 0.8rem !important;
+figure.highlight pre .addition {
+  color: #105ede;
 }
-#article-container pre[class*='language-'] .caption a {
-  padding: 0 !important;
+figure.highlight pre .meta {
+  color: #c792ea;
+}
+figure.highlight pre .comment {
+  color: #969896;
+}
+figure.highlight pre .variable,
+figure.highlight pre .attribute,
+figure.highlight pre .regexp,
+figure.highlight pre .ruby .constant,
+figure.highlight pre .xml .tag .title,
+figure.highlight pre .xml .pi,
+figure.highlight pre .xml .doctype,
+figure.highlight pre .html .doctype,
+figure.highlight pre .css .id,
+figure.highlight pre .tag .name,
+figure.highlight pre .css .class,
+figure.highlight pre .css .pseudo {
+  color: #ff5370;
+}
+figure.highlight pre .tag {
+  color: #89ddff;
+}
+figure.highlight pre .number,
+figure.highlight pre .preprocessor,
+figure.highlight pre .literal,
+figure.highlight pre .params,
+figure.highlight pre .constant,
+figure.highlight pre .command {
+  color: #f78c6c;
+}
+figure.highlight pre .built_in {
+  color: #ffcb6b;
+}
+figure.highlight pre .ruby .class .title,
+figure.highlight pre .css .rules .attribute,
+figure.highlight pre .string,
+figure.highlight pre .value,
+figure.highlight pre .inheritance,
+figure.highlight pre .header,
+figure.highlight pre .ruby .symbol,
+figure.highlight pre .xml .cdata,
+figure.highlight pre .special,
+figure.highlight pre .number,
+figure.highlight pre .formula {
+  color: #c3e88d;
+}
+figure.highlight pre .keyword,
+figure.highlight pre .title,
+figure.highlight pre .css .hexcolor {
+  color: #89ddff;
+}
+figure.highlight pre .function,
+figure.highlight pre .python .decorator,
+figure.highlight pre .python .title,
+figure.highlight pre .ruby .function .title,
+figure.highlight pre .ruby .title .keyword,
+figure.highlight pre .perl .sub,
+figure.highlight pre .javascript .title,
+figure.highlight pre .coffeescript .title {
+  color: #82aaff;
+}
+figure.highlight pre .tag .attr,
+figure.highlight pre .javascript .function {
+  color: #c792ea;
+}
+#article-container figure.highlight .line.marked {
+  background-color: rgba(97,97,97,0.314);
+}
+#article-container figure.highlight table {
+  display: block;
+  overflow: auto;
+  border: none;
+}
+#article-container figure.highlight table td {
+  padding: 0;
+  border: none;
+}
+#article-container figure.highlight .gutter pre {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background-color: var(--hlnumber-bg);
+  color: var(--hlnumber-color);
+  text-align: right;
+}
+#article-container figure.highlight .code pre {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  width: 100%;
 }
 #article-container pre,
 #article-container figure.highlight {
@@ -4392,7 +4353,7 @@ _:future,
   overflow: hidden;
   border-radius: 12px !important;
   font-size: 1.1em;
-  background-color: #efefef;
+  background-color: var(--global-bg);
   -webkit-box-shadow: 1px 1px 3px;
   box-shadow: 1px 1px 3px;
   text-shadow: #969696 0 0 1px;
@@ -4460,9 +4421,6 @@ _:future,
 }
 #post .ads-wrap {
   margin: 2rem 0;
-}
-[data-theme="dark"] #post .post-copyright {
-  background-color: #000;
 }
 .relatedPosts {
   margin-top: 2rem;
@@ -4821,13 +4779,13 @@ _:future,
   z-index: 22;
 }
 #vcomment textarea {
-  background: url("https://cdn.jsdelivr.net/gh/Eurkon/CDN/hexo/images/user/comment_bg.png") 100% 100% no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/Eurkon/CDN@master/hexo/images/user/comment_bg.png") 100% 100% no-repeat;
 }
 #vcomment textarea:focus {
   background-image: none;
 }
 #waline-wrap textarea {
-  background: url("https://cdn.jsdelivr.net/gh/Eurkon/CDN/hexo/images/user/comment_bg.png") 100% 100% no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/Eurkon/CDN@master/hexo/images/user/comment_bg.png") 100% 100% no-repeat;
 }
 #waline-wrap textarea:focus {
   background-image: none;
@@ -5583,7 +5541,7 @@ details {
   margin: 1em 0;
   border-radius: 4px;
   background: #fff;
-  font-size: 15px;
+  font-size: 16px;
   -webkit-transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
@@ -6709,7 +6667,7 @@ div.videos[col='4'] iframe {
   display: -ms-flexbox;
   display: box;
   display: flex;
-  font-size: 15px;
+  font-size: 16px;
   background-color: rgba(88,88,88,0.6);
   border-radius: 0.25rem;
   margin: 1rem 0;
@@ -6981,7 +6939,7 @@ p.p.right {
 }
 span.p.small,
 p.p.small {
-  font-size: 15px;
+  font-size: 16px;
 }
 span.p.large,
 p.p.large {
@@ -7826,6 +7784,8 @@ div.timenode .meta:after {
   color: #e6eaed;
 }
 [data-theme='dark'] {
+  --main: #383838;
+  --second: #eee;
   --global-bg: #0d0d0d;
   --font-color: rgba(255,255,255,0.7);
   --hr-border: rgba(255,255,255,0.4);
