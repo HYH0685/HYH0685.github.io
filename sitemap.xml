@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://blog.eurkon.com/charts/index.html</loc>
+    <loc>https://blog.eurkon.com/census/index.html</loc>
     
     <lastmod>2021-06-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.eurkon.com/census/index.html</loc>
+    <loc>https://blog.eurkon.com/charts/index.html</loc>
     
     <lastmod>2021-06-05</lastmod>
     
@@ -480,6 +480,20 @@
   </url>
   
   <url>
+    <loc>https://blog.eurkon.com/tags/Hexo/</loc>
+    <lastmod>2021-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.eurkon.com/tags/Butterfly/</loc>
+    <lastmod>2021-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.eurkon.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2021-06-11</lastmod>
     <changefreq>daily</changefreq>
@@ -495,20 +509,6 @@
   
   <url>
     <loc>https://blog.eurkon.com/tags/Flume/</loc>
-    <lastmod>2021-06-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.eurkon.com/tags/Hexo/</loc>
-    <lastmod>2021-06-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.eurkon.com/tags/Butterfly/</loc>
     <lastmod>2021-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,14 +543,14 @@
   </url>
   
   <url>
-    <loc>https://blog.eurkon.com/tags/Zookeeper/</loc>
+    <loc>https://blog.eurkon.com/tags/Sqoop/</loc>
     <lastmod>2021-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.eurkon.com/tags/Sqoop/</loc>
+    <loc>https://blog.eurkon.com/tags/Zookeeper/</loc>
     <lastmod>2021-06-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
