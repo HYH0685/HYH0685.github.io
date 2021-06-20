@@ -172,45 +172,23 @@ a {
 	text-decoration: none !important;
 }
 
-a.ghcard:after,
-a.button--animated:after,
-a.hexo-douban-tab:after,
-.hexo-douban-title a:after,
-a.hexo-douban-button:after,
-a.flink-list-card:after,
-.article-sort-item-title:after {
-	display: none;
-}
-
-.flink-list-card a {
-	position: unset !important
+a.ghcard,
+a.button--animated,
+a.hexo-douban-tab,
+.hexo-douban-title a,
+a.hexo-douban-button,
+a.flink-list-card,
+.article-sort-item-title {
+	border-bottom: none !important;
 }
 
 #article-container a {
-	position: relative;
+  font-weight: 500;
 }
 
 #article-container a:hover {
 	color: var(--text-highlight-color);
-}
-
-#article-container a:after {
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	width: 0;
-	height: 2px;
-	background-color: var(--text-highlight-color);
-	content: '';
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-}
-
-#article-container a:hover:after {
-	width: 100%;
+  border-bottom: solid 2px;
 }
 
 /* 侧边栏 */
@@ -963,15 +941,23 @@ div.card-widget,
 #page-header #nav a:hover,
 #page-header #nav #site-name:hover,
 #page-header #nav #toggle-menu:hover {
+	color: var(--main) !important;
+	background-color: var(--second);
+	box-shadow: var(--main-shadow);
+}
+
+#page-header.nav-fixed #nav a:hover,
+#page-header.not-top-img #nav a:hover,
+#page-header.nav-fixed #nav #site-name:hover,
+#page-header.not-top-img #nav #site-name:hover,
+#page-header.nav-fixed #nav #toggle-menu:hover,
+#page-header.not-top-img #nav #toggle-menu:hover {
 	color: var(--second) !important;
 	background-color: var(--main);
 	box-shadow: var(--main-shadow);
 }
 
 #page-header #nav .menus_item:hover .menus_item_child .site-page.child:hover {
-	color: var(--second) !important;
-	background-color: var(--main);
-	box-shadow: var(--main-shadow);
 	-webkit-transition: all 0s;
 	-moz-transition: all 0s;
 	-o-transition: all 0s;
@@ -1031,6 +1017,7 @@ div.card-widget,
 
 #nav .menus_items .menus_item .menus_item_child li:hover {
 	border-radius: 8px;
+	background: none;
 }
 
 #nav .menus_items .menus_item .menus_item_child li:hover a {
@@ -1138,23 +1125,23 @@ div.card-widget,
 	filter: blur(10px);
 }
 
-#post-cover-img {
-	width: 100% !important;
-	height: 100% !important;
-	object-fit: cover;
-	min-width: 50vw;
-	min-height: 20rem;
-	opacity: .7;
-}
-
-#post-cover-img:after {
+#post-cover:after {
 	position: absolute;
 	content: '';
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	box-shadow: 110px -130px 300px 60px var(--main) inset;
+	box-shadow: 110px -130px 300px 60px var(--cover-bg) inset;
+}
+
+#post-cover-img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover;
+	min-width: 50vw;
+	min-height: 20rem;
+	/* opacity: .8; */
 }
 
 /* 文章标题 */
