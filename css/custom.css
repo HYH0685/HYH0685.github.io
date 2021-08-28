@@ -126,10 +126,11 @@ table tr:nth-child(even) {
 /* 文章段落标题 */
 #article-container .headerlink {
 	float: right;
-	opacity: .3;
+	opacity: .2;
 	border-bottom: none !important;
 	position: relative;
 	font-weight: unset;
+	color: var(--main);
 }
 
 #article-container .headerlink:before {
@@ -466,6 +467,41 @@ a.flink-list-card,
 	background: linear-gradient(to right,#f12711,#f5af19);
 }
 
+.page #category .category-list {
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.page #category .category-list .category-list-item {
+	list-style: none;
+	margin: 0 auto;
+}
+
+.page #category .category-list .category-list-item .category-list-count {
+	display: none;
+}
+
+.page #category .category-list .category-list-item .category-list-link {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: var(--font-color);
+}
+
+.page #category .category-list .category-list-item :hover {
+	color: var(--second);
+	background-color: var(--main);
+	border-radius: 8px;
+	padding: .5em .8em;
+}
+
+@media (max-width:600px) {
+	.page #category .category-list .category-list-item {
+		width: 33%;
+		text-align: center;
+	}
+}
+
 /* 目录 */
 #aside-content #card-toc .toc-content .toc-link.active {
 	font-weight: 700;
@@ -537,6 +573,7 @@ a.flink-list-card,
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a,
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .post-meta-date time {
 	padding: .2rem .2rem;
+	white-space: nowrap;
 }
 
 #recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap a:hover {
@@ -752,7 +789,7 @@ strong {
 	font-size: 1.1em !important;
 }
 
-.tk-content {
+.tk-comment .tk-content {
 	background-color: var(--global-bg);
 	padding: 0 1rem;
 	border-radius: 8px;
@@ -765,6 +802,23 @@ strong {
 
 .tk-avatar-img {
 	border-radius: 8px;
+}
+
+.comment-head {
+	position: relative;
+}
+
+.comment-protocol {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	font-weight: 700;
+	font-size: 1.43em;
+}
+
+.tk-comments-container {
+	min-height: 0 !important;
 }
 
 /* 豆瓣页面 */
@@ -860,13 +914,55 @@ html {
 
 /* 页脚 */
 #footer {
-	background-color: var(--card-bg);
+	background: var(--card-bg);
+}
+
+#footer:before {
+	display: none;
 }
 
 #footer #footer-wrap {
-	padding: .5rem 1rem;
+	padding: 0;
 	color: var(--font-color);
-	background-color: var(--card-bg);
+}
+
+#footer #footer-wrap #footer-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	margin: .5rem auto;
+	max-width: 1200px;
+}
+
+#footer #footer-wrap #footer-container .footer-group {
+	margin: 0 auto;
+	min-width: 120px;
+}
+
+#footer #footer-wrap #footer-container .footer-group .footer-group-title {
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#footer #footer-wrap #footer-container .footer-group .footer-group-item {
+	color: var(--font-color);
+	display: block;
+}
+
+#footer #footer-wrap #footer-container .footer-group .footer-group-item:hover {
+	color: #49B1F5;
+}
+
+@media (max-width:600px) {
+	#footer #footer-wrap #footer-container {
+		display: none;
+	}
+}
+
+#footer-banner {
+	margin-top: .5rem;
 }
 
 /* 卡片背景 */
@@ -900,7 +996,7 @@ div.card-widget,
 }
 
 .pace .pace-progress {
-	background: linear-gradient(215deg,#49b1f5 30%,#00c4b6 70%);
+	background: linear-gradient(215deg,#49b1f5 20%,#00c4b6 80%);
 	position: fixed;
 	z-index: 2000;
 	top: 0;
@@ -974,7 +1070,7 @@ div.card-widget,
 #nav #menus {
 	position: absolute;
 	top: 8px;
-  /* display: flex; */
+	/* display: flex; */
 	justify-content: center;
 	width: 100%;
 }
@@ -982,8 +1078,8 @@ div.card-widget,
 #nav .menus_items {
 	position: absolute;
 	text-align: center;
-	width: 650px;
-	left: 0;
+	width: 600px;
+	left: -3em;
 	right: 0;
 	margin: auto;
 }
@@ -1152,6 +1248,7 @@ div.card-widget,
 /* 文章标题 */
 #page-header #post-info {
 	text-align: left;
+	bottom: 25%;
 }
 
 #page-header #post-info .post-title, 
@@ -1161,6 +1258,12 @@ div.card-widget,
 
 #page-header #post-info .post-title {
 	font-size: 3.5em;
+}
+
+@media screen and (max-width: 768px) {
+	#page-header #post-info .post-title {
+		font-size: 2.5em;
+	}
 }
 
 #page-header #post-info #post-meta {
